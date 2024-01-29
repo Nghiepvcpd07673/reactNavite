@@ -7,11 +7,13 @@ import MyLab5B1 from './src/screens/lab5/bai1';
 import MyLab5B2 from './src/screens/lab5/bai2';
 import MyLab5b3 from './src/screens/lab5/bai3';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import MyLab6 from './src/screens/lab6';
+import MyLab7 from './src/screens/lab7';
 
 const App = () => {
-  const origin = 'black';
+  
   return (
-    <MyLab5b3/>
+   <MyLab7/>
   )
 }
 
