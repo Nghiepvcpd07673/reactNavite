@@ -12,7 +12,7 @@ const MyLab5b3 = () => {
             source={require('../lab5/imageLab5/hoiAn1.jpg')}>
 
 
-            <View style={{ marginTop: 0.07 * windownHeght, height: 30, marginLeft: 20, marginRight: 20, flexDirection: 'row' }}>
+            <View style={{ marginTop: 0.05 * windownHeght, height: 30, marginLeft: 20, marginRight: 20, flexDirection: 'row' }}>
                 <TouchableOpacity style={{ flex: 1, alignItems: 'flex-start' }}>
                     <View>
                         <Text><Icon name="arrow-back" size={30} color="#F0F0F0" /></Text>
@@ -25,6 +25,7 @@ const MyLab5b3 = () => {
                 </TouchableOpacity>
 
             </View>
+
             <View style={{flexDirection:'row',flex:1,alignItems:'flex-end'}}>
                 <Text style={{
                     color: 'white', fontWeight: 'bold', fontSize: 30,
