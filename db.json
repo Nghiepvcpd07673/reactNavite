@@ -1,0 +1,24 @@
+{
+    "nguoiDung":[
+        {
+            "id":"1",
+            "name":"Trần Văn Nam",
+            "birthday":"12-2-2003"
+        },
+        {
+            "id":"2",
+            "name":"Trần Văn Nam",
+            "birthday":"12-2-2002"
+        },
+        {
+            "id":"3",
+            "name":"Trần Văn Hà",
+            "birthday":"12-2-2004"
+        },
+        {
+            "id":"4",
+            "name":"Trần Thi Cam Nhung ",
+            "birthday":"12-2-2001"
+        }
+    ]
+}

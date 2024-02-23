@@ -7,15 +7,103 @@ import SettingLab6 from '../lab6/setting';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { createStackNavigator } from '@react-navigation/stack';
 
 
-const Stack = createStackNavigator();
-const TabBottom = createBottomTabNavigator();
-const TopTab = createMaterialTopTabNavigator();
 
-export const Top = () => {
-    <TopTab.Navigator
+const Tab = createBottomTabNavigator();
+const TopTabs = createMaterialTopTabNavigator();
+const Trangchu = () => {
+    <View>
+        <Text>Trang chủ </Text>
+    </View>
+}
+const NguoiDung = () => {
+    <View>
+        <Text>Người Dùng </Text>
+    </View>
+
+}
+const CaiDat = () => {
+    <View>
+        <Text> Cài Đặt </Text>
+    </View>
+}
+const Shop = () => {
+    <View>
+        <Text>Shop </Text>
+    </View>
+}
+
+const BottomTabNavigation = () => {
+    <Tab.Navigator>
+        <Tab.Screen
+            name='Home'
+            component={HomeLab6Screen}
+            options={{
+
+                tabBarLabel: 'Home', // Tiêu đề của tab
+
+                tabBarLabelStyle: {
+                    fontSize: 17,
+                    fontWeight: 'bold'
+                },
+                tabBarIcon: ({ color, size = 30 }) => (
+                    <FontAwesome name="home" color={color} size={size} />
+                ),
+            }}
+        />
+        <Tab.Screen
+            name='Article'
+            component={Article}
+            options={{
+                tabBarLabel: 'Article',
+
+                tabBarLabelStyle: {
+                    fontSize: 17,
+                    fontWeight: 'bold'
+                },
+                tabBarIcon: ({ color, size = 20 }) => (
+                    <FontAwesome name="newspaper-o" color={color} size={size} />
+                )
+
+            }}
+        />
+        <Tab.Screen
+            name='Chat'
+            component={SettingLab6}
+            options={{
+                tabBarLabel: 'Chat',
+                tabBarLabelStyle: {
+                    fontSize: 17,
+                    fontWeight: 'bold'
+                },
+
+                tabBarIcon: ({ color, size = 20 }) => (
+                    <FontAwesome name="comment" color={color} size={size} />
+                )
+            }}
+        />
+
+        <Tab.Screen
+            name='Setting'
+            component={SettingLab6}
+            options={{
+                tabBarLabel: 'Seting',
+                tabBarLabelStyle: {
+                    fontSize: 17,
+                    fontWeight: 'bold'
+                },
+
+                tabBarIcon: ({ color, size = 20 }) => (
+                    <FontAwesome name="cogs" color={color} size={size} />
+                )
+
+            }} />
+    </Tab.Navigator>
+}
+
+const TopTabNavigation = () => {
+    <TopTabs.Navigator
         tabBarOptions={{
             activeTintColor: '#E66340',
             inactiveTintColor: 'gray',
@@ -25,139 +113,56 @@ export const Top = () => {
             },
 
         }}>
-        <TopTab.Screen
-            name='Home'
-            component={HomeLab6Screen}
+        <TopTabs.Screen
+            name='TrangChu'
+            component={Trangchu}
             options={{
 
-                tabBarLabel: 'Home', // Tiêu đề của tab
+                tabBarLabel: 'Trang chủ', // Tiêu đề của tab
                 tabBarIcon: ({ color, size = 30 }) => (
                     <FontAwesome name="home" color={color} size={size} />
                 ),
             }}
         />
-        <TopTab.Screen
-            name='Article'
-            component={Article}
+        <TopTabs.Screen
+            name='NguoiDung'
+            component={NguoiDung}
             options={{
-                tabBarLabel: 'Article',
+                tabBarLabel: 'Người Dùng',
                 tabBarIcon: ({ color, size = 20 }) => (
                     <FontAwesome name="newspaper-o" color={color} size={size} />
                 )
 
             }}
         />
-        <TopTab.Screen
-            name='Chat'
-            component={SettingLab6}
+        <TopTabs.Screen
+            name='CaiDat'
+            component={CaiDat}
             options={{
-                tabBarLabel: 'Chat',
+                tabBarLabel: 'Cài Đặt',
                 tabBarIcon: ({ color, size = 20 }) => (
                     <FontAwesome name="comment" color={color} size={size} />
                 )
             }} />
-        <TopTab.Screen
-            name='Setting'
-            component={SettingLab6}
+        <TopTabs.Screen
+            name='Shop'
+            component={Shop}
             options={{
-                tabBarLabel: 'Seting',
+                tabBarLabel: 'Shop',
                 tabBarIcon: ({ color, size = 20 }) => (
                     <FontAwesome name="cogs" color={color} size={size} />
                 )
 
             }} />
-    </TopTab.Navigator>
-}
-export const Bottom = () => {
-    <TabBottom.Navigator
-        screenOptions={{
-            headerShown: false,
-
-            tabBarInactiveTintColor: 'blue',
-            tabBarActiveBackgroundColor: '#E66340',
-            tabBarActiveTintColor: 'white',
-
-        }}
-    >
-        <TabBottom.Screen
-            name='Home'
-            component={HomeLab6Screen}
-            options={{
-
-                tabBarLabel: 'Home', // Tiêu đề của tab
-
-                tabBarLabelStyle: {
-                    fontSize: 17,
-                    fontWeight: 'bold'
-                },
-                tabBarIcon: ({ color, size = 30 }) => (
-                    <FontAwesome name="home" color={color} size={size} />
-                ),
-            }}
-        />
-        <TabBottom.Screen
-            name='Article'
-            component={Article}
-            options={{
-                tabBarLabel: 'Article',
-
-                tabBarLabelStyle: {
-                    fontSize: 17,
-                    fontWeight: 'bold'
-                },
-                tabBarIcon: ({ color, size = 20 }) => (
-                    <FontAwesome name="newspaper-o" color={color} size={size} />
-                )
-
-            }}
-        />
-        <TabBottom.Screen
-            name='Chat'
-            component={SettingLab6}
-            options={{
-                tabBarBadge: 10,
-                tabBarLabel: 'Chat',
-                tabBarLabelStyle: {
-                    fontSize: 17,
-                    fontWeight: 'bold'
-
-                },
-
-                tabBarIcon: ({ color, size = 20 }) => (
-                    <FontAwesome name="comment" color={color} size={size} />
-                )
-            }}
-        />
-
-        <TabBottom.Screen
-            name='Setting'
-            component={SettingLab6}
-            options={{
-                tabBarLabel: 'Seting',
-                tabBarLabelStyle: {
-                    fontSize: 17,
-                    fontWeight: 'bold'
-                },
-
-                tabBarIcon: ({ color, size = 20 }) => (
-                    <FontAwesome name="cogs" color={color} size={size} />
-                )
-
-            }} />
-    </TabBottom.Navigator>
+    </TopTabs.Navigator>
 }
 const MyLab7b3 = () => {
 
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name='TopTab' component={Top}  />
-                <Stack.Screen name='BottomTab' component={Bottom}  />
-            </Stack.Navigator>
+    <NavigationContainer>
+        <TopTabNavigation />
+        <BottomTabNavigation />
+    </NavigationContainer>
 
-
-        </NavigationContainer>
-    )
 }
 
 export default MyLab7b3

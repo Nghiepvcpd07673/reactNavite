@@ -10,10 +10,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import MyLab6 from './src/screens/lab6';
 import MyLab7 from './src/screens/lab7';
 
+import Crud from './src/screens/lab8/CRUD';
+import Home from './src/screens/assignment/home';
+import Index from './src/screens/assignment/home';
+
 const App = () => {
   
   return (
-   <MyLab7/>
+   <Crud/>
   )
 }
 
